@@ -25,8 +25,21 @@ async function RollForeverSquare()
 	}
 }
 
+async function RollSpiralClockwise()
+{
+	var rollSpeed = 10;
+	var rollTimeSec = 0.5;
+	for (var deg = 0; deg <= 540; deg += 10)
+	{
+		// Time here should really be dependent on deg,
+		// because further out in the spiral requires more time moving.
+		await roll(deg, rollSpeed, rollTimeSec);
+	}
+}
+
 async function startProgram()
 {
 	// await SimpleHelloWorld();
-	await RollForeverSquare();
+	// await RollForeverSquare();
+	await CheckHeadingMeaning();
 }
